@@ -38,6 +38,17 @@ const displayNews = (data) => {
     const newsContainerArray = data.data;
     const newsArrayLength = newsContainerArray.length;
     console.log(newsArrayLength);
+    if(newsArrayLength==0){
+        const newsCountter = document.getElementById('news-number-count');
+        newsCountter.innerHTML = ``;
+        const newsNumberCount = document.createElement('div');
+        newsNumberCount.innerHTML = `
+        <div class="card d-flex flex-row bd-highlight mb-3">
+                    <h5>No Data found</h5>
+                    </div>
+        `;
+        newsCountter.appendChild(newsNumberCount);
+    }
 
     //  console.log(newsContainerArray[0].author.img);
     newsContainer.innerHTML = ``;
