@@ -11,34 +11,40 @@
 <body class="m-5 p-3">
     <header>
         <!-- Napbar statr -->
-        <section class="border border-bottom-5 border-danger">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light m-5">
-                <div class="container-fluid">
-                  <a class="navbar-brand fw-bold" href="#">ExclusiveNews24.com</a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">News</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Blog</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-        </section>
+
+        <div class="row">
+            <div class="col-8">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light m-5">
+                        <div class="container-fluid">
+                          <a class="navbar-brand fw-bold" href="#">ExclusiveNews24.com</a>
+                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                              <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">News</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Blog</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </nav>
+            </div>
+            <div class="col-3 m-5 p-3">
+                  <button type="button" class="btn btn-light">Light</button>
+                  <button type="button" class="btn btn-light">Light</button>
+            </div>
+        </div>
+
+        
         <!-- Napbar end  -->
 
         <!-- News catagory start -->
         <section>
-            <div id="catagory-container">
+            <div id="catagory-container" class="d-flex flex-row bd-highlight mb-3">
                 <div>
 
                 </div>
@@ -50,32 +56,53 @@
 
     <main>
         <!-- catagorywise News items count statrt  -->
-        <section class="border border-3">
-            <h3>4 items found for category Entertainment</h3>
+        <section id="news-number-count" class="border border-3">
+            <div>
+                
+            </div>
+            
         </section>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Sort By View:</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                  
+                 
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Default
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                      <li><a class="dropdown-item" href="#">Less</a></li>
+                      <li><a class="dropdown-item" href="#">More</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <button class="btn btn-secondary" type="submit">Today’s Pick</button>
+                  <button class="btn btn-outline-success" type="submit">Trending</button>
+                </form>
+              </div>
+            </div>
+          </nav>
          <!-- catagorywise News items count end  -->
 
          <!-- News sorting start -->
-        <section class="border border-3">
-            <h4>Sort By View:</h4>
-        </section>
+       
         <!-- News sorting end -->
 
         <!-- News detail statr  -->
-        <section>
-            <h2>News detail</h2>
-        </section>
-        <!-- News detail end -->
-
-        <div id="news-container">
-
-             
-              
+         <div id="news-container">             
         </div>
-
+        <!-- News detail end -->
         
         <!-- footer start -->
-        <footer>
+        <footer class="text-center">
             <h6>Copyright 2022 ExclusiveNews24.com</h6>
         </footer>
         <!-- footer end -->
