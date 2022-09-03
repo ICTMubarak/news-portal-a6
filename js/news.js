@@ -17,7 +17,7 @@ const displayCatagory = data => {
         // console.log(catagoryId);
         const catagoryDiv = document.createElement('div');
         catagoryDiv.innerHTML = `
-          <button class="btn" onclick="loadNews(${catagoryId})"><h6>${catagory.category_name}</h6></button>
+          <button class="btn d-flex" onclick="loadNews(${catagoryId})"><h6>${catagory.category_name}</h6></button>
         `;
         catagoryContainer.appendChild(catagoryDiv);
     })
@@ -126,7 +126,13 @@ const displayModalNews = (data) => {
 
   
     <div class="modal-body">
-      You can ragistration now.
+    <img class="card-img-left" src="${data.data[0].thumbnail_url}" alt="Card image cap">
+    <p>${data.data[0].details}</p>
+    <div class = "row">
+                            <div class = "col-3 text-center"><img class="autorpic rounded" src="${data.data[0].author.img}"> ${data.data[0].author.name? data.data[0].author.name:'No data found'}<br>${data.data[0].author.published_date}</div>
+                            <div class = "col-3 text-center"><img class="rounded" src="pic/view-icon.jpg"> ${data.data[0].total_view?data.data[0].total_view:'No data found'}</div>
+                            <div class = "col-3 text-center"><img class="rounded" src="pic/rating.jpg"></div>
+    <div>
     </div>
 
    
