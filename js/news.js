@@ -33,7 +33,30 @@ const loadNews = (catagoryId) =>{
 }
 
 const displayNews = (data) => {
-    console.log(data);
+    // console.log(data);
+    const newsContainer = document.getElementById('news-container');
+    const newsContainerArray = data.data;
+
+    //  console.log(newsContainerArray[0].author.img);
+
+    newsContainerArray.forEach(news => {
+        console.log(news);
+
+        const newsDiv = document.createElement('div');
+        newsDiv.innerHTML = `
+        <div class="card">
+                      <img class="card-img-top" src="${news.thumbnail_url}" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">${news.title}</h5>
+                        <p class="card-text">${news.details}</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+        `;
+        newsContainer.appendChild(newsDiv);
+    })
+
+
 }
 
 
