@@ -14,7 +14,7 @@ const displayCatagory = data => {
     const catagoryContainer = document.getElementById('catagory-container');
     catagoryArr.forEach(catagory => {
         const catagoryId = catagory.category_id; 
-        console.log(catagoryId);
+        // console.log(catagoryId);
         const catagoryDiv = document.createElement('div');
         catagoryDiv.innerHTML = `
           <button class="btn" onclick="loadNews(${catagoryId})"><h6>${catagory.category_name}</h6></button>
@@ -33,11 +33,11 @@ const loadNews = (catagoryId) =>{
 }
 
 const displayNews = (data) => {
-    // console.log(data);
+    //  console.log(data);
     const newsContainer = document.getElementById('news-container');
     const newsContainerArray = data.data;
     const newsArrayLength = newsContainerArray.length;
-    console.log(newsArrayLength);
+    // console.log(newsArrayLength);
     if(newsArrayLength==0){
         const newsCountter = document.getElementById('news-number-count');
         newsCountter.innerHTML = ``;
@@ -60,8 +60,11 @@ const displayNews = (data) => {
 
     newsContainerArray.forEach(news => {
 
-        console.log(news);
-        
+        // console.log(news);
+        // console.log("chack");
+          const newsId = news._id;
+        // console.log(newsId);
+        // console.log(news._id);
         newsCountter.innerHTML = ``;
         newsNumberCount.innerHTML = `
         <div class="card d-flex flex-row bd-highlight mb-3">
@@ -82,10 +85,10 @@ const displayNews = (data) => {
                         <h5 class="card-title">${news.title}</h5>
                         <p class="card-text">${news.details.slice(0, 500)}...</p><br><br>
                         <div class = "row">
-                            <div class = "col-3 text-center"><img class="autorpic rounded" src="${news.author.img}"> ${news.author.name}<br>${news.author.published_date}</div>
-                            <div class = "col-3 text-center"><img class="rounded" src="pic/view-icon.jpg"> ${news.total_view}</div>
+                            <div class = "col-3 text-center"><img class="autorpic rounded" src="${news.author.img}"> ${news.author.name? news.author.name:'No data found'}<br>${news.author.published_date}</div>
+                            <div class = "col-3 text-center"><img class="rounded" src="pic/view-icon.jpg"> ${news.total_view?news.total_view:'No data found'}</div>
                             <div class = "col-3 text-center"><img class="rounded" src="pic/rating.jpg"></div>
-                            <div class = "col-3 text-center"><button type="button" class="btn btn-secondary btn-sm">Details</button></div>
+                            <div class = "col-3 text-center"><button type="button" onclick="modalOpen('${newsId}')" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-secondary btn-sm">Details</button></div>
                         <div>
                       </div>
                     </div>
@@ -94,5 +97,50 @@ const displayNews = (data) => {
     })
     
 }
+
+const modalOpen = (newsId) =>{
+    // console.log(newsId);
+    const url =  `https://openapi.programming-hero.com/api/news/${newsId}`;
+    // console.log(url);
+    fetch(url)
+    .then(res => res.json())
+    .then(data => displayModalNews(data))
+    // .catch(error => console.log(error))
+}
+
+const displayModalNews = (data) => {
+    console.log(data.data[0].title);
+   const newsOpenModal = document.getElementById('news-open-modal');
+   const creatModalDiv = document.createElement('div');
+   creatModalDiv.innerHTML = `
+   
+<div class="modal" id="myModal">
+<div class="modal-dialog">
+  <div class="modal-content">
+
+    
+    <div class="modal-header">
+      <h4 class="modal-title">${data.data[0].title}</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    </div>
+
+  
+    <div class="modal-body">
+      You can ragistration now.
+    </div>
+
+   
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+    </div>
+
+  </div>
+</div>
+</div>
+   `;
+   newsOpenModal.appendChild(creatModalDiv);
+
+}
+
 loadNewsCatagory();
 loadNews(1);
