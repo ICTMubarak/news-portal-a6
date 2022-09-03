@@ -54,7 +54,7 @@ const displayNews = (data) => {
         newsCountter.innerHTML = ``;
         newsNumberCount.innerHTML = `
         <div class="card d-flex flex-row bd-highlight mb-3">
-                    <h3>${newsArrayLength} items found for category Entertainment.</h3>
+                    <h5>${newsArrayLength} items found for category Entertainment.</h5>
                      
                     </div>
         `;
@@ -81,6 +81,7 @@ const displayNews = (data) => {
         `;
         newsContainer.appendChild(newsDiv);
     })
+    
 }
 loadNewsCatagory();
 loadNews(1);
