@@ -6,25 +6,6 @@ const loadNewsCatagory = () => {
     // .catch(error => console.log(error))
 }
 
-
-// const newsCatagory = (data) => {
-//     // console.log(data);
-//     const loadNewsCategory = data.data.news_category;
-//     console.log(loadNewsCategory);
-//     const newsCatagory = document.getElementById('news-catagory');
-//     loadNewsCategory.forEach(Category => {
-
-//         const catagoryDiv = document.createElement('div');
-//         catagoryDiv.innerHTML = `
-//          <h6>catagory namaeL: </h6>
-//         `;
-//         loadNewsCategory.appendChild(catagoryDiv);
-//     })
-
-// }
-
-
-
 const displayCatagory = data => {
     
     const catagoryArr = data.data.news_category;
