@@ -24,6 +24,7 @@ const displayCatagory = data => {
 }
 
 const loadNews = (catagoryId) =>{
+        toggleSpinner(true);
         const url = `https://openapi.programming-hero.com/api/news/category/0${catagoryId}`;
         fetch(url)
         .then(res => res.json())
@@ -94,8 +95,9 @@ const displayNews = (data) => {
                     </div>
         `;
         newsContainer.appendChild(newsDiv);
+        
     })
-    
+    toggleSpinner(false); 
 }
 
 const modalOpen = (newsId) =>{
@@ -146,6 +148,16 @@ const displayModalNews = (data) => {
    `;
    newsOpenModal.appendChild(creatModalDiv);
 
+}
+
+const toggleSpinner = isLoading => {
+    const loaderSection =document.getElementById('loader');
+    if(isLoading){
+        loaderSection.classList.remove('d-none');
+    }
+    else{
+        loaderSection.classList.add('d-none');
+    }
 }
 
 loadNewsCatagory();
