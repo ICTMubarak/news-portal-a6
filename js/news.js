@@ -88,7 +88,7 @@ const displayNews = (data) => {
                             <div class = "col-3 text-center"><img class="autorpic rounded" src="${news.author.img}"> ${news.author.name? news.author.name:'No data found'}<br>${news.author.published_date}</div>
                             <div class = "col-3 text-center"><img class="rounded" src="pic/view-icon.jpg"> ${news.total_view?news.total_view:'No data found'}</div>
                             <div class = "col-3 text-center"><img class="rounded" src="pic/rating.jpg"></div>
-                            <div class = "col-3 text-center"><button type="button" onclick="modalOpen('${newsId}')" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-secondary btn-sm">Details</button></div>
+                            <div class = "col-3 text-center"><button type="button" onmouseover="modalOpen('${newsId}')" data-bs-toggle="modal" data-bs-target="#myModal"  class="btn btn-secondary btn-sm">Details</button></div>
                         <div>
                       </div>
                     </div>
@@ -135,7 +135,7 @@ const displayModalNews = (data) => {
     <div>
     </div>
 
-   
+    
     <div class="modal-footer">
       <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
     </div>
