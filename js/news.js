@@ -7,7 +7,6 @@ const loadNewsCatagory = () => {
 }
 
 const displayCatagory = data => {
-    
     const catagoryArr = data.data.news_category;
     console.log(catagoryArr);
     const catagoryContainer = document.getElementById('catagory-container');
