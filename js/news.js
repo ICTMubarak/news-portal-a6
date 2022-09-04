@@ -3,7 +3,7 @@ const loadNewsCatagory = () => {
     fetch(url)
     .then(res => res.json())
     .then(data => displayCatagory(data))
-    // .catch(error => console.log(error))
+    .catch(error => console.log("Something is wrong..."))
 }
 
 const displayCatagory = data => {
