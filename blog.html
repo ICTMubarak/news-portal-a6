@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="icon" type="image/x-icon" href="pic/news-fev-icon.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+</head>
+<body class="bg-dark">
+    <section class="container m-5 p-3 bg-secondary text-white">
+        <header class="text-info text-center">
+            <h3>ExclsiveNews24.com এর ব্লগে আপনাকে স্বাগতম</h3><br><br>
+        </header>
+        <main>
+            <h5 class="text-warning">১। প্রশ্নঃ  var, let এবং const এর মধ্যে পার্থক্য কি? </h5>
+            <p>উত্তরঃ  let হচ্ছে জাভাস্ক্রিপ্টের পুরাতন keyword । let এর কিছু সীমাবদ্ধতা ছিলো বা আছে, এই সীমাবদ্ধতাগুলো দূর করার জন্যই মূলত জাভাস্ক্রিপ্টের ES6 এ et এবং const keyword সংযুক্ত করা হয়। তবে var keyword ব্যবহারের কিছু সুবিধাও রয়েছে, এজন্য এটাকে এখনো রেখে দেওয়া হয়ছে। var দিয়ে কোন variable ডিক্লিয়ার করলে সেটা গ্লোবালি কাজ করে। অর্থাৎ এটাকে যেকোন যায়গা থেকে ব্যবহার করা যায়। এটাকে যেকোন যায়গা থেকে পরিবর্তন করা যায়, এমনকি এটি দিয়ে একই নামের একাধিক ভেরিয়েবলও ডিক্লিয়ার করা যায়, এবং মান গুলো যেকোন যায়গা থেকে পরিবর্তন করা যায়। অপরদিকে let দিয়ে কোন ভেরিয়েবল ডিক্লিয়ার করলে সেটা শুধু মাত্র সেই ব্লকের মধ্যে সীমাবদ্ধ থাকে। বাহিরথকে এটার মান পরিবর্তন করা যায় না। একই ব্লকে একই নামে একাধিক ভেরিয়েবল ডিক্লিয়ার করা যায় না, তবে প্রয়োজনে এর ভেলু বা মানগুলো পরিবর্তন করা যায়।</p><br>
+
+            <h5 class="text-warning">২। প্রশ্নঃ  arrow function এবং regular function এর মধ্যে পার্থক্য কি?</h5>
+            <p>উত্তরঃ  জভাস্ক্রিপ্টের ES6 এ আরো একটি নতুন জিনিস যুক্ত করা হয়েছে, সেটা হচ্ছে  arrow fnction. এটি ব্যবহারের ফলে কোড ছোটো এবং ক্লিন দেখায়। অ্যারো ফাংশনের ক্ষেত্রে আমাদের return ইউজ করতে হয়না, এটি অটোমেটিক ডাটা রিটার্ন করে দেয়, তবে মাল্টি লাইনে কোড লিখলে শেষে return লিখে দিতে হয়। <br>
+
+                অপরদিকে regular function একটু বড় হয়, এবং এটাতে কোন কিছু return  করতে হলে অবশ্যই return keyword টি লিখতে হবে।
+                </p><br>
+
+            <h5 class="text-warning">৩। প্রশ্নঃ map, forEach, filter, find এই চারটির মধ্যে পার্থক্য কি? </h5>
+            <p>উত্তরঃ<br> Map = এরে এর প্রতিতিটি ইলিমেন্ট ট্রাভার্স করে এবং প্রতিটি ইলিমেন্টের জন্য একটি ভেলু রিটার্ন করে, রিটার্ন করার মত কোন কিছু না পাইলে Undefined রিটার্ন করে। এবং এই সব গুলো রিটার্ন ভেলু নিয়ে নতুন একটি এরে তৈরি হয়। <br><br>
+
+                forEach = এরে এর প্রতিটি ইলিমেন্ট নিয়ে একটি ফাংশন কল করে। এই ফাংশনের ৩টি প্যারামিটার থাকে। (item, index, arr)। <br><br>
+                
+                Filter = এরে এর প্রতিটি ইলিমেন্ট ট্রাভার্স করে এবং একটি নির্দিষ্ট শর্ত সাপেক্ষে ইলিমেন্ট গুলোকে আলাদা করে নতুন একটি এরে তৈরি করে। <br><br>
+                
+                find  = এটি Filter এর মতই তবে এটি শুধু মাত্র ১ম প্রাপ্ত ইলিমেন্টের ভেলু রিটার্ন করে। আর এটা থেকে কোন এরে পাওয়া যায় না, শুধু একটি ভেলু পাওয়া যায়। </p><br>
+
+            <h5 class="text-warning">৪। প্রশ্নঃ  templatestring কেন ব্যবহার করা হয়? </h5>
+            <p>উত্তরঃ জাভাস্ক্রিপ্ট ইএস ৬(ES6) এ নতুনভাবে স্ট্রিং ডিক্লেয়ার এবং কিছু মজার কাজ করার জন্যই এসেছে টেমপ্লেট লিটারেল(Template Literal) যাকে টেমপ্লেট স্ট্রিং (Template String) ও বলা হয়। টেমপ্লেট স্ট্রিং (Template String) ইউস করে কোনো স্ট্রিং নিতে হলে সিঙ্গেল বা ডাবল কোটেশনের পরিবর্তে - ব্যাকটিক (``) ইউস করতে হয় । এর মাধ্যমে খুব সহজেই মাল্টিলাইন স্ট্রিং নেওয়া যায়। স্ট্রিং এর ভেতর ডাইনামিক ভ্যারিয়েবল ও এক্সপ্রেশন নিয়ে কাজ করা যায়। </p><br>
+           
+        </main>
+    </section>
+    <script src="js/news.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
